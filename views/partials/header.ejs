@@ -1,0 +1,13 @@
+ <header class="mb-10 rounded-3xl bg-white/90 p-8 shadow-lg shadow-slate-200 backdrop-blur-sm">
+      <div class="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+        <nav class="flex flex-wrap items-center gap-3">
+          <a href="/user/" class="<%= currentPage === 'home' ? 'bg-slate-200': 'hover:bg-slate-200' %> rounded-full border border-slate-200 bg-slate-100 px-4 py-2 text-sm font-medium text-slate-700 transition">Air Bnb</a>
+          <a href="/host/add-home" class="<%= currentPage === 'add-home' ? 'bg-slate-200': 'hover:bg-slate-200' %> rounded-full border-slate-200 bg-slate-100 px-4 py-2 text-sm font-medium text-slate-700 transition">Add home</a>
+          <a href="/user/homes" class="<%= currentPage === 'homes' ? 'bg-slate-200': 'hover:bg-slate-200' %> rounded-full border-slate-200 bg-slate-100 px-4 py-2 text-sm font-medium text-slate-700 transition">Homes List</a>
+          <a href="/user/bookings" class="<%= currentPage === 'bookings' ? 'bg-slate-200': 'hover:bg-slate-200' %> rounded-full border-slate-200 bg-slate-100 px-4 py-2 text-sm font-medium text-slate-700 transition">Bookings</a>
+          <a href="/user/favourites" class="<%= currentPage === 'favourites' ? 'bg-slate-200': 'hover:bg-slate-200' %> rounded-full border-slate-200 bg-slate-100 px-4 py-2 text-sm font-medium text-slate-700 transition">Favourites</a>
+          <a href="/host/host-homes-list" class="<%= currentPage === 'host-home' ? 'bg-slate-200': 'hover:bg-slate-200' %> rounded-full border-slate-200 bg-slate-100 px-4 py-2 text-sm font-medium text-slate-700 transition">Host Homes</a>
+          
+        </nav>
+      </div>
+    </header>

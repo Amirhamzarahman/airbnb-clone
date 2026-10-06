@@ -1,0 +1,44 @@
+<%- include('../partials/head') %>
+
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-900">
+  <div class="mx-auto max-w-4xl px-6 py-10">
+   <%- include('../partials/header') %>
+    <main class="space-y-8">
+      <div>
+          <h1 class="text-4xl font-semibold text-slate-900">Welcome to Air Bnb Favourites Page</h1>
+        </div>
+      <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <h2 class="text-xl font-semibold text-slate-800">Here are our favourite list of homes : <%- favouriteHomesFiltered.length %></h2>
+      </div>
+
+      <ul class="flex flex-col gap-4">
+        <% favouriteHomesFiltered.forEach((home) => { %>
+          <li class="overflow-hidden rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+            <div class="mb-6 overflow-hidden rounded-3xl bg-slate-100">
+              <img src="<%= home.houseUrl %>" alt="<%= home.houseName %>" class="h-64 w-full object-cover object-center transition duration-200 hover:scale-105" />
+            </div>
+            <div class="flex items-center justify-between gap-4">
+              <div>
+                <h3 class="text-lg font-semibold text-slate-900"><%= home.houseName %></h3>
+                <p class="mt-2 text-sm text-slate-600">Location: <span class="font-medium text-slate-800"><%= home.houseLocation %></span></p>
+                <p class="mt-1 text-sm text-slate-600">Ratings: <span class="font-medium text-slate-800"><%= home.houseRating %></span></p>
+              </div>
+              <div class="rounded-2xl bg-slate-100 px-4 py-3 text-right">
+                <p class="text-sm text-slate-500">House Rate</p>
+                <p class="text-xl font-semibold text-slate-900"><%= home.housePrice %>₹</p>
+              </div>
+              <form action="/user/favourites/delete/<%= home._id %>" method="POST">
+                <button type="submit" class="cursor-pointer rounded-2xl border border-rose-200 bg-rose-50 px-4 py-2 text-sm font-semibold text-rose-700 shadow-sm transition hover:-translate-y-0.5 hover:bg-rose-100 hover:text-rose-800 focus:outline-none focus:ring-2 focus:ring-rose-400 focus:ring-offset-2">
+                  Remove From Favourites
+                </button>
+              </form>
+            </div>
+          </li>
+        <% }) %>
+      </ul>
+      
+    </main>
+  </div>
+</body>
+</html>
